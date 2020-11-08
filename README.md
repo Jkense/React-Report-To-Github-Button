@@ -21,9 +21,16 @@ npm install github-report-button --save
     ```javascript
     import GithubReportButton from 'github-report-button'
     ```
+3. Create Personal access token:
 
-3. Use `GithubReportButton` component:
+    https://github.com/settings/tokens
+    
+    Allow public_repo as a scope
+    
+    [Scope!](http://google.com)
+    
+4. Use `GithubReportButton` component:
 
     ```javascript
-    <GithubReportButton/>
+    <ExampleComponent token="token" owner="owner" repo="repo"/>
     ```
