@@ -1,9 +1,52 @@
-/* add css module styles here (optional) */
-
-.test {
-  margin: 2em;
-  padding: 0.5em;
-  border: 2px solid #000;
+.button {
+  padding: .5em;
+  background-color: black;
+  color: white;
+  border-radius: 2em;
   font-size: 2em;
   text-align: center;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+
+.button:focus,.button:hover {
+  outline:none;
+}
+
+.logo {
+  height: 2.5em;
+  padding-left: .2em;
+  width: auto;
+  vertical-align:middle;
+}
+
+.text {
+  display:inline-block;
+  padding: 0 .75em;
+  vertical-align:middle;
+}
+
+.issueIcon {
+  padding-right: .5em;
+  width: auto;
+  vertical-align:middle;
+  padding-bottom: .25em;
+}
+
+.reportIssueButton {
+  margin-left:auto;
+}
+
+.descriptionInput {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: .75em!important;
+}
+
+.descriptionIssueLabel{
+  padding-top: .75em;
 }
