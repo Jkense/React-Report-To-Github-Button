@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styles from './styles.module.css'
 import githubLogo from '/GithubLogo/GitHub-Mark.svg'
-import { Heading, Button, ButtonPrimary, Dialog, Box, Text, FormGroup, TextInput } from '@primer/components'
-import { IssueOpenedIcon } from '@primer/octicons-react'
+import { Heading, Button, ButtonPrimary, Dialog, Box, Flash, FormGroup, TextInput } from '@primer/components'
+import { IssueOpenedIcon, XIcon } from '@primer/octicons-react'
 
 import { Octokit } from "@octokit/core";
 
@@ -23,17 +23,21 @@ export const GithubReportButton = ({ token, owner, repo }) => {
   const reportIssue = async (e) => {
     e.preventDefault();
 
-    const issue = {
-      title: title,
-      body: description,
+    if(title !== 'title' && description !== 'description' && title.length >= 3 && description.length >= 10 ){
+      const issue = {
+        title: title,
+        body: description,
+      }
+
+      const url='POST /repos/'+owner+'/'+repo+'/issues';
+
+      await octokit.request(url, issue)
+        .then(data => {
+          console.log(data); // JSON data parsed by `data.json()` call
+        });
+    } else{
+      console.log('Please provide a title or description');
     }
-
-    const url='POST /repos/'+owner+'/'+repo+'/issues';
-
-    await octokit.request(url, issue)
-      .then(data => {
-        console.log(data); // JSON data parsed by `data.json()` call
-      });
   }
 
 return <React.StrictMode>
@@ -54,11 +58,22 @@ return <React.StrictMode>
         <Box p={3}>
             <FormGroup.Label htmlFor="title-text">Title of issue</FormGroup.Label>
             <TextInput id="title-text" aria-label="Title" width={600}
-            onChange={titleChange} defaultValue="Please provide a title" />
+            onChange={titleChange} defaultValue="Please provide a title"/>
+
+            {title === 'title' || title.length < 3 && <Flash variant="danger">
+              <IssueOpenedIcon className={styles.issueIcon}/>
+              Please provide a title
+            </Flash>}
 
             <FormGroup.Label className={styles.descriptionIssueLabel} htmlFor="description-text">Description of issue</FormGroup.Label>
             <TextInput className={styles.descriptionInput} id="description-text" aria-label="Description"
              width={600} onChange={descriptionChange} defaultValue="Please provide a description" />
+
+            {description === 'description' || description.length < 10 && <Flash variant="danger">
+              <IssueOpenedIcon className={styles.issueIcon}/>
+              Please provide a description
+            </Flash>}
+            
         </Box>
         <Dialog.Header>
           <Button onClick={handleClose}>Close</Button>
