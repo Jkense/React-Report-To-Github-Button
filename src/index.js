@@ -6,7 +6,7 @@ import { IssueOpenedIcon, XIcon } from '@primer/octicons-react'
 
 import { Octokit } from "@octokit/core";
 
-export const GithubReportButton = ({ token, owner, repo }) => {
+export const GithubReportButton = ({ token, owner, repo, buttonHeight='7.5vh', buttonText='Report an issue' }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState('title');
   const [description, setDescription] = useState('description');
@@ -41,9 +41,9 @@ export const GithubReportButton = ({ token, owner, repo }) => {
   }
 
 return <React.StrictMode>
-      <button className={styles.button} onClick={handleShow}>
+      <button style={{height:buttonHeight }} className={styles.button} onClick={handleShow}>
         <img className={styles.logo} alt="Github Logo" src={githubLogo}></img>
-        <Heading className={styles.text} fontSize={5}>Report an issue</Heading>
+        <Heading className={styles.text} >{buttonText}</Heading>
       </button>
         
       <Dialog isOpen={isOpen} onDismiss={handleClose}>

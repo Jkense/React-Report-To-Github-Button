@@ -1,9 +1,10 @@
+/* BUTTON */
+
 .button {
-  padding: .5em;
+  padding: .5%;
   background-color: black;
   color: white;
-  border-radius: 2em;
-  font-size: 2em;
+  border-radius: 9999px;
   text-align: center;
 }
 
@@ -17,17 +18,19 @@
 }
 
 .logo {
-  height: 2.5em;
-  padding-left: .2em;
+  height: 100%;
   width: auto;
   vertical-align:middle;
-}
+ }
 
 .text {
   display:inline-block;
   padding: 0 .75em;
   vertical-align:middle;
+  font-size: 100%!important;
 }
+
+/* DIALOGE */
 
 .issueIcon {
   padding-right: .5em;
