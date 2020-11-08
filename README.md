@@ -1,30 +1,29 @@
-# githubreportbutton
+# Github Report Button
 
-> A button which will report feedback through Github issues
+> This library allows users to implement a feedback button which will post issues on a Github repository.
 
-[![NPM](https://img.shields.io/npm/v/githubreportbutton.svg)](https://www.npmjs.com/package/githubreportbutton) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+![version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-## Install
+---
 
+## How To Install
+
+This package requires react.
+
+1. Install through:
 ```bash
-npm install --save githubreportbutton
+npm install github-report-button --save
 ```
 
-## Usage
+2. Import `GithubReportButton` from `github-report-button`:
 
-```jsx
-import React, { Component } from 'react'
+    ```javascript
+    import GithubReportButton from 'github-report-button'
+    ```
 
-import MyComponent from 'githubreportbutton'
-import 'githubreportbutton/dist/index.css'
+3. Use `GithubReportButton` component:
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
-```
-
-## License
-
-MIT © [JKense](https://github.com/JKense)
+    ```javascript
+    <GithubReportButton/>
+    ```
