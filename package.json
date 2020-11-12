@@ -1,6 +1,6 @@
 {
   "name": "react-report-to-github-button",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A button which will report feedback through Github issues",
   "author": "JKense",
   "license": "MIT",
