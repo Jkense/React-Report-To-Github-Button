@@ -1,10 +1,10 @@
 {
-  "name": "githubreportbutton",
+  "name": "react-report-to-github-button",
   "version": "1.0.0",
   "description": "A button which will report feedback through Github issues",
   "author": "JKense",
   "license": "MIT",
-  "repository": "JKense/githubreportbutton",
+  "repository": "JKense/React-Report-To-Github-Button",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
@@ -24,7 +24,11 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^16.0.0",
+    "@octokit/core": "^3.2.1",
+    "@primer/components": "^20.3.0",
+    "@primer/octicons": "^11.0.0",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
@@ -48,7 +52,8 @@
     "react-scripts": "^3.4.1"
   },
   "files": [
-    "dist"
+    "dist",
+    "src/styles.module.css"
   ],
   "dependencies": {
     "@octokit/core": "^3.2.1",

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import styles from './styles.module.css'
+import styles from './githubButton.module.css'
 import githubLogo from '/GithubLogo/GitHub-Mark.svg'
 import { Heading, Button, ButtonPrimary, Dialog, Box, Flash, FormGroup, TextInput } from '@primer/components'
-import { IssueOpenedIcon, XIcon } from '@primer/octicons-react'
+import { IssueOpenedIcon } from '@primer/octicons-react'
 
 import { Octokit } from "@octokit/core";
 
@@ -40,7 +40,7 @@ export const GithubReportButton = ({ token, owner, repo, buttonHeight='7.5vh', b
     }
   }
 
-return <React.StrictMode>
+return <React.Fragment>
       <button style={{height:buttonHeight }} className={styles.button} onClick={handleShow}>
         <img className={styles.logo} alt="Github Logo" src={githubLogo}></img>
         <Heading className={styles.text} >{buttonText}</Heading>
@@ -82,5 +82,5 @@ return <React.StrictMode>
         </FormGroup>
 
       </Dialog>
-    </React.StrictMode>
+    </React.Fragment>
 }
