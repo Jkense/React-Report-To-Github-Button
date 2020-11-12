@@ -27,10 +27,20 @@ npm install github-report-button --save
     
     Allow public_repo as a scope
     
-    [Scope!](http://google.com)
+    ![Scope](https://github.com/Jkense/githubreportbutton/blob/master/PersonalAccessToken_Scope.JPG)
     
 4. Use `GithubReportButton` component:
 
     ```javascript
-    <ExampleComponent token="token" owner="owner" repo="repo"/>
+    <ExampleComponent token="yourToken" owner="yourUsername" repo="yourPublicRepo"/>
     ```
+    
+    You can pass the following parameters:
+    
+| Parameter     | Default value               |
+| ------------- | ----------------------------|
+| token         | Required                    |
+| owner         | Required                    |
+| repo          | Required                    |
+| buttonHeight  | (Optional) 7.5vh            |
+| buttonText    | (Optional) 'report an issue'|
